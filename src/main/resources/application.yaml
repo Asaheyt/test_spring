@@ -1,0 +1,21 @@
+spring:
+  r2dbc:
+    username: postgres
+    password: root
+    url: r2dbc:postgresql://localhost:5432/test_database
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/test_database
+    driverClassName: org.postgresql.Driver
+    user: postgres
+    password: root
+    changeLog: "classpath:db/changelog/db.changelog-root.yaml"
+    dropFirst: false
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE
+springdoc:
+  api-docs:
+    groups:
+      enabled: true

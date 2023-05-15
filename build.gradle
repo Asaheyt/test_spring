@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.epam.asaheyt'
+version = 'v0.0.1'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux:2.7.1'
+	implementation 'org.springframework.data:spring-data-r2dbc:1.5.1'
+	implementation 'io.r2dbc:r2dbc-postgresql:0.8.12.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.7.1'
+	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.1'
+
+	implementation 'org.liquibase:liquibase-core:4.12.0'
+	implementation 'org.postgresql:postgresql:42.4.0'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.7.1'
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+	implementation 'org.springdoc:springdoc-openapi-webflux-ui:1.6.9'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.24'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.1'
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
