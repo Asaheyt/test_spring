@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Swagger Test Application", version = "1.0", description = "Documentation APIs v1.0 OMG"))
+@OpenAPIDefinition(info = @Info(title = "Swagger Test Application", version = "1.0", description = "Documentation APIs v1.0"))
 @SecurityScheme(
   name = "basicAuth",
   type = SecuritySchemeType.HTTP,
